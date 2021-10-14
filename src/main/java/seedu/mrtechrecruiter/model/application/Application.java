@@ -6,7 +6,7 @@ import seedu.mrtechrecruiter.model.applicant.Applicant;
 import seedu.mrtechrecruiter.model.position.Position;
 
 /**
- * An association class representing a job application.
+ * An association class between Applicant and Position, representing a job application.
  *
  * References both the job applicant and the applied position.
  * Contains relevant information on the application.

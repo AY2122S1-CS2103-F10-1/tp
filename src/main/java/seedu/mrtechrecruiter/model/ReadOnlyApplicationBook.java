@@ -4,7 +4,7 @@ import javafx.collections.ObservableList;
 import seedu.mrtechrecruiter.model.application.Application;
 
 /**
- * An unmodifiable application list.
+ * An unmodifiable view of an application book.
  */
 public interface ReadOnlyApplicationBook {
 

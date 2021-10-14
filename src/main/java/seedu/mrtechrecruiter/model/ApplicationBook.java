@@ -8,6 +8,9 @@ import javafx.collections.ObservableList;
 import seedu.mrtechrecruiter.model.application.Application;
 import seedu.mrtechrecruiter.model.application.UniqueApplicationList;
 
+/**
+ * Wraps all application data at ApplicationBook level.
+ */
 public class ApplicationBook implements ReadOnlyApplicationBook {
 
     private final UniqueApplicationList applications = new UniqueApplicationList();

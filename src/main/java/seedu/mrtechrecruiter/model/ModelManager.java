@@ -17,7 +17,7 @@ import seedu.mrtechrecruiter.model.person.Person;
 import seedu.mrtechrecruiter.model.position.Position;
 
 /**
- * Represents the in-memory model of the address book data.
+ * Represents the in-memory model of MrTechRecruiter's data.
  */
 public class ModelManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
