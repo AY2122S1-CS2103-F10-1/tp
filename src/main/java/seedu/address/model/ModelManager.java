@@ -94,7 +94,6 @@ public class ModelManager implements Model {
         filteredPositions = new FilteredList<>(this.positionBook.getPositionList());
     }
 
-
     public ModelManager() {
         this(new AddressBook(), new ApplicantBook(), new PositionBook(), new UserPrefs());
     }
@@ -276,7 +275,7 @@ public class ModelManager implements Model {
         return positionBook.hasPosition(position);
     }
     @Override
-    public boolean hasPositionWithTitle(Title title) {
+    public boolean hasPositionWithTitle (Title title) {
         requireNonNull(title);
         return positionBook.hasPositionWithTitle(title);
     }

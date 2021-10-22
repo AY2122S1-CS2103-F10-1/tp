@@ -26,16 +26,17 @@ public class RejectionRateCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "Rejection rate for %1$s = %2$f%%";
 
-    public static final String MESSAGE_NO_SUCH_POSITION = "There is no such position in MrTechRecruiter";
+    public static final String MESSAGE_NO_SUCH_POSITION = "There is no such position in MrTechRecruiter.";
 
     public static final String MESSAGE_NO_CURRENT_APPLICANTS = "There are currently no applicants for this position.";
 
-    private final Title positionTitle;
+    private Title positionTitle;
 
     /**
      * Creates an RejectionRateCommand to get the specified rejection rate.
      */
     public RejectionRateCommand(Title positionTitle) {
+        requireNonNull(positionTitle);
         this.positionTitle = positionTitle;
     }
 

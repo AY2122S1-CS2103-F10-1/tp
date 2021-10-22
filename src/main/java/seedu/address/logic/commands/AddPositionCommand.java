@@ -22,7 +22,6 @@ public class AddPositionCommand extends Command {
             + PREFIX_TITLE + "software engineer "
             + PREFIX_DESCRIPTION + "writes code everyday :/ ";
 
-
     public static final String MESSAGE_SUCCESS = "New position added: %1$s";
     public static final String MESSAGE_DUPLICATE_POSITION = "This position already exists in the MTR system";
 
