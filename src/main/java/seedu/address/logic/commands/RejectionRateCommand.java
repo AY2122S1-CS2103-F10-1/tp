@@ -24,7 +24,7 @@ public class RejectionRateCommand extends Command {
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_POSITION + "software engineer";
 
-    public static final String MESSAGE_SUCCESS = "Rejection rate for %1$s = %2$d%%";
+    public static final String MESSAGE_SUCCESS = "Rejection rate for %1$s = %2$f%%";
 
     public static final String MESSAGE_NO_SUCH_POSITION = "There is no such position in MrTechRecruiter";
 
@@ -39,6 +39,12 @@ public class RejectionRateCommand extends Command {
         this.positionTitle = positionTitle;
     }
 
+    /**
+     * Tries to execute a Rejection Rate command
+     * @param model {@code Model} which the command should operate on.
+     * @return
+     * @throws CommandException
+     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);

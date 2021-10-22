@@ -29,8 +29,6 @@ import seedu.address.model.position.Position;
 import seedu.address.model.position.Title;
 import seedu.address.testutil.PositionBuilder;
 
-
-
 public class AddPositionCommandTest {
     @Test
     public void constructor_nullPosition_throwsNullPointerException() {

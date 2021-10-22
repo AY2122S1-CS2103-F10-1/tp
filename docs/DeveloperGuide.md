@@ -162,7 +162,7 @@ The proposed rejection rate mechanism is facilitated by `Model` and `Calculator`
 The `Model` component checks if the position exists and accesses it, while `Calculator` calculates the rejection rate.
 Implements the following functions:
 * `ModelManager#hasPositionWithTitle()`  — Checks if a position with such a given title exists.
-* `Calculator#calculateRejectionRate()`  — Calculates the rejection rate of a position based on the number of applicants and number of rejected applicants. 
+* `Calculator#calculateRejectionRate()`  — Calculates the rejection rate of a position based on the number of applicants and number of rejected applicants.
 
 These operations are exposed in the `Model` interface as `Model#hasPositionWithTitle()` and `Model#calculateRejectionRate` respectively.
 
