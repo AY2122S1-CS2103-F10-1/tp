@@ -100,9 +100,6 @@ public interface Model {
      */
     void setPerson(Person target, Person editedPerson);
 
-    /** Returns an unmodifiable view of the filtered person list */
-    ObservableList<Person> getFilteredPersonList();
-
     /**
      * Updates the filter of the filtered person list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.
@@ -120,29 +117,14 @@ public interface Model {
     void setPosition(Position position, Position editedPosition);
 
     /**
-     * Returns true if {@code position} exists in MrTechRecruiter.
-     */
-    boolean hasPosition(Position toAdd);
-
-
-    /**
      * Returns an unmodifiable view of the filtered person list
      */
     ObservableList<Person> getFilteredPersonList();
-
-    boolean hasPositionWithTitle(Title title);
-
 
     /**
      * Returns an unmodifiable view of the filtered applicant list
      */
     ObservableList<Applicant> getFilteredApplicantList();
-
-
-    /**
-     * Returns an unmodifiable view of the filtered position list
-     */
-    ObservableList<Position> getFilteredPositionList();
 
     /**
      * Adds the given position.
@@ -172,7 +154,7 @@ public interface Model {
 
 
     /**
-     * Returns the PositionBook 
+     * Returns the PositionBook
      */
     ReadOnlyPositionBook getPositionBook();
 

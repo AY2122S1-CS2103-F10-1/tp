@@ -369,6 +369,7 @@ public class ModelManager implements Model {
             }
         }
         return Calculator.calculateRejectionRate(total, count);
+    }
 
     @Override
     public void updateApplicantsWithPosition(Position positionToEdit, Position editedPosition) {

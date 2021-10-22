@@ -4,7 +4,6 @@ import seedu.address.model.applicant.Address;
 import seedu.address.model.applicant.Email;
 import seedu.address.model.applicant.Name;
 import seedu.address.model.applicant.Phone;
-import seedu.address.model.application.Application;
 import seedu.address.model.application.Application.ApplicationStatus;
 import seedu.address.model.position.Title;
 
@@ -50,7 +49,9 @@ public class ApplicantParticulars {
         return positionTitle;
     }
 
-    public ApplicationStatus getApplicationStatus() { return applicationStatus; }
+    public ApplicationStatus getApplicationStatus() {
+        return applicationStatus;
+    }
 
     public void setApplicationStatus(ApplicationStatus applicationStatus) {
         this.applicationStatus = applicationStatus;
