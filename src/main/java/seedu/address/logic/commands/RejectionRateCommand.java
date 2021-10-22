@@ -39,12 +39,6 @@ public class RejectionRateCommand extends Command {
         this.positionTitle = positionTitle;
     }
 
-    /**
-     * Tries to execute a Rejection Rate command
-     * @param model {@code Model} which the command should operate on.
-     * @return
-     * @throws CommandException
-     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
