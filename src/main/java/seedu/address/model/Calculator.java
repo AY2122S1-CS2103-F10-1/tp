@@ -20,9 +20,4 @@ public class Calculator {
         }
         return (float) totalRejected / totalApplied;
     }
-
-    public Calculator createCalculator() {
-        return new Calculator();
-    }
 }
-
