@@ -120,18 +120,6 @@ public interface Model {
     void setPosition(Position position, Position editedPosition);
 
     /**
-     * Returns true if {@code position} exists in MrTechRecruiter.
-     */
-    boolean hasPosition(Position toAdd);
-
-    /**
-     * Returns an unmodifiable view of the filtered person list
-     */
-    ObservableList<Person> getFilteredPersonList();
-
-    boolean hasPositionWithTitle(Title title);
-
-    /**
      * Returns an unmodifiable view of the filtered applicant list
      */
     ObservableList<Applicant> getFilteredApplicantList();
@@ -153,11 +141,6 @@ public interface Model {
      */
     void deletePosition(Position position);
 
-    /**
-     * Returns the user prefs' position book file path.
-     */
-    Path getPositionBookFilePath();
-
 
     /**
      * Replaces position book data with the data in {@code positionBook}.
@@ -168,15 +151,6 @@ public interface Model {
      * Returns the user prefs' position book file path.
      */
     Path getPositionBookFilePath();
-
-    //=========== Applicant related methods =============================================================
-    /**
-     * Replaces the given applicant {@code target} with {@code editedApplicant}.
-     * {@code target} must exist in MrTechRecruiter.
-     * The applicant identity of {@code editedApplicant} must not be the same as another existing person in
-     * MrTechRecruiter.
-     */
-    void setApplicant(Applicant target, Applicant editedApplicant);
 
     /**
      * Returns the PositionBook

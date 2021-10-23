@@ -259,19 +259,6 @@ public class AddPositionCommandTest {
         public ReadOnlyApplicantBook getApplicantBook() {
             throw new AssertionError("This method should not be called.");
         }
-
-        public void updateApplicantsWithPosition(Position positionToEdit, Position newPosition) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        public void setApplicantBook(ReadOnlyApplicantBook applicantBook) {
-            throw new AssertionError("This method should not be called.");
-        }
-
-        @Override
-        public ReadOnlyApplicantBook getApplicantBook() {
-            throw new AssertionError("This method should not be called.");
-        }
     }
 
     /**

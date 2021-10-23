@@ -390,22 +390,4 @@ public class ModelManager implements Model {
                 .count();
         return Calculator.calculateRejectionRate(total, count);
     }
-
-    @Override
-    public void updateApplicantsWithPosition(Position positionToEdit, Position editedPosition) {
-        requireAllNonNull(positionToEdit, editedPosition);
-        applicantBook.updateApplicantsWithPosition(positionToEdit, editedPosition);
-    }
-
-    @Override
-    public void updateFilteredApplicantList(Predicate<Applicant> predicate) {
-        requireNonNull(predicate);
-        filteredApplicants.setPredicate(predicate);
-    }
-
-    @Override
-    public ObservableList<Applicant> getFilteredApplicantList() {
-        return filteredApplicants;
-
-    }
 }
