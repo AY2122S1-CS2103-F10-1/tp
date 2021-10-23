@@ -173,7 +173,7 @@ Step 1. The user launches the application and is assumed to have some positions 
 
 ![InitialState](images/rejection-rates/Initial-state.png)
 
-Step 2. The user executes `rate pos/Software Engineer` command to calculate the rejection rate of Software Engineer in the PositionBook. 
+Step 2. The user executes `rate pos/software engineer` command to calculate the rejection rate of Software Engineer in the PositionBook. 
 The `rate` command calls `Model#hasPositionWithTitle`, causing the model to check whether `Software Engineer` exists in the database as a Position.
 
 ![Step2](images/rejection-rates/Step2.png)
