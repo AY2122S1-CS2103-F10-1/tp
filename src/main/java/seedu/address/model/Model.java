@@ -100,6 +100,9 @@ public interface Model {
      */
     void setPerson(Person target, Person editedPerson);
 
+    /** Returns an unmodifiable view of the filtered person list */
+    ObservableList<Person> getFilteredPersonList();
+
     /**
      * Updates the filter of the filtered person list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.
@@ -150,17 +153,30 @@ public interface Model {
      */
     void deletePosition(Position position);
 
-    //=========== Filtered Position List Accessors =============================================================
+    /**
+     * Returns the user prefs' position book file path.
+     */
+    Path getPositionBookFilePath();
+
+
+    /**
+     * Replaces position book data with the data in {@code positionBook}.
+     */
+    void setPositionBook(ReadOnlyPositionBook positionBook);
 
     /**
      * Returns the user prefs' position book file path.
      */
     Path getPositionBookFilePath();
 
+    //=========== Applicant related methods =============================================================
     /**
-     * Replaces position book data with the data in {@code positionBook}.
+     * Replaces the given applicant {@code target} with {@code editedApplicant}.
+     * {@code target} must exist in MrTechRecruiter.
+     * The applicant identity of {@code editedApplicant} must not be the same as another existing person in
+     * MrTechRecruiter.
      */
-    void setPositionBook(ReadOnlyPositionBook positionBook);
+    void setApplicant(Applicant target, Applicant editedApplicant);
 
     /**
      * Returns the PositionBook
@@ -182,6 +198,14 @@ public interface Model {
      */
     void setApplicant(Applicant target, Applicant editedApplicant);
 
+    // Position related methods
+
+    boolean hasPosition(Position position);
+
+    // Position related methods
+
+    boolean hasPositionWithTitle(Title title);
+
     /**
      * Deletes the given applicant.
      * The applicant must exist in the address book.
@@ -190,7 +214,12 @@ public interface Model {
 
     Path getApplicantBookFilePath();
 
-    float calculateRejectionRate(Position p);
+    /**
+     * Calculates the rejection rate of a given position.
+     * @param title The title of the position to be calculated.
+     * @return The rejection rate of the specified position.
+     */
+    float calculateRejectionRate(Title title);
 
     /**
      * Replaces position book data with the data in {@code positionBook}.
@@ -207,5 +236,4 @@ public interface Model {
     void updateFilteredApplicantList(Predicate<Applicant> predicateShowAllApplicants);
 
     void updateApplicantsWithPosition(Position positionToEdit, Position editedPosition);
-
 }

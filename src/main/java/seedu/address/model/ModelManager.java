@@ -350,25 +350,43 @@ public class ModelManager implements Model {
         return userPrefs.getApplicantBookFilePath();
     }
 
+    @Override
+    public void updateApplicantsWithPosition(Position positionToEdit, Position editedPosition) {
+        requireAllNonNull(positionToEdit, editedPosition);
+        applicantBook.updateApplicantsWithPosition(positionToEdit, editedPosition);
+    }
+
+    @Override
+    public void updateFilteredApplicantList(Predicate<Applicant> predicate) {
+        requireNonNull(predicate);
+        filteredApplicants.setPredicate(predicate);
+    }
+
+    @Override
+    public ObservableList<Applicant> getFilteredApplicantList() {
+        return filteredApplicants;
+
+    }
 
     //========== Rejection rates =======================================
     /**
      * Initialise rejection rate of a new position.
      *
-     * @param p The position to be initialised.
+     * @param title The title of the position to be calculated.
      * @return The rejection rate of a given position in MTR.
      */
     @Override
-    public float calculateRejectionRate(Position p) {
+    public float calculateRejectionRate(Title title) {
+        Position currPosition = positionBook.getPositionByTitle(title);
         int total = (int) applicantBook.getApplicantList()
                 .stream()
-                .filter(applicant -> applicant.isApplyingTo(p))
+                .filter(applicant -> applicant.isApplyingTo(currPosition))
                 .count();
 
         int count = (int) applicantBook.getApplicantList()
                 .stream()
-                .filter(applicant -> applicant.isApplyingTo(p)
-                                && (applicant.getApplication().getStatus() == ApplicationStatus.REJECTED))
+                .filter(applicant -> applicant.isApplyingTo(currPosition)
+                        && (applicant.getApplication().getStatus() == ApplicationStatus.REJECTED))
                 .count();
         return Calculator.calculateRejectionRate(total, count);
     }

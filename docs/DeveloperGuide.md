@@ -200,6 +200,7 @@ Step 5. Any command the user executes next simply refreshes the current state to
   * Cons: Potentially a large amount of space required, slowing performance. Also, the dictionary needs to be updated everytime an applicant's status changes or when a position/applicant is added/deleted,
           which could result in many inter-linked implementations for the dictionary, rendering it slow.
 
+
 ### Filter applicants feature
 
 #### Implementation

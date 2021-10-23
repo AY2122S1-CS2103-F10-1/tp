@@ -83,6 +83,4 @@ public class EditPositionCommand extends Command {
         return index.equals(e.index)
                 && editPositionDescriptor.equals(e.editPositionDescriptor);
     }
-
-
 }
